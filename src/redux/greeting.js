@@ -1,10 +1,8 @@
 const UPDATE_GREETING = 'UPDATE_GREETING';
 
-const API_URL = 'http://localhost:9000';
-
 export const fetchGreeting = () => async (dispatch) => {
   try {
-    const response = await fetch(`${API_URL}/v1/random`);
+    const response = await fetch('/v1/random');
     const greeting = await response.json();
     if (response.ok) {
       dispatch({ type: UPDATE_GREETING, payload: greeting });
